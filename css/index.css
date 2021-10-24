@@ -1,53 +1,271 @@
+@charset "UTF-8";
 body {
   background-color: #000000;
+  margin: 0;
+  background-image: url(/img/decor.png);
+  background-repeat: no-repeat;
+  background-position: top right, center left;
 }
 body header {
-  background: #726767;
+  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   color: #fff;
+  max-width: 400px;
+  margin-left: 4%;
 }
 body header .header__logo {
   display: flex;
-  margin-left: 5%;
+  text-align: center;
 }
-body header .header__login {
+body header .header-login {
   display: flex;
   flex-direction: row;
+  margin-left: 50%;
+}
+body header .header-login h2 {
+  margin-left: 10%;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
 }
 body main {
-  background: rgba(0, 0, 255, 0.288);
+  /*max-width: 1400px;*/
+  margin: 0 auto;
 }
 body main .wrapper {
+  position: relative;
+  z-index: 100;
   color: #fff;
   display: flex;
   justify-content: space-between;
 }
 body main .wrapper .wrapper__text {
+  background-image: url(/img/Ellipse.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  position: relative;
   margin-top: 10%;
   margin-left: 5%;
-  width: 500px;
+  max-width: 700px;
 }
 body main .wrapper .wrapper__text h1 {
-  font-size: 70px;
+  font-size: 64px;
+  font-family: "Montserrat", sans-serif;
 }
-body main .wrapper .wrapper__text h3 {
-  font-size: 32px;
+body main .wrapper .wrapper__text .wrapper__text__bottom {
+  display: flex;
+}
+body main .wrapper .wrapper__text .wrapper__text__bottom h3 {
+  font-family: "Noto Sans", sans-serif;
+  line-height: 27px;
+  font-weight: normal;
+  font-size: 20px;
+  margin: auto 90px 0;
+  /* сверху | горизонтально | снизу */
+}
+body main .wrapper .wrapper__text .wrapper__text__bottom .Vl {
+  width: 4px;
+  /* Line width */
+  height: 130px;
+  /* Override in-line if you want specific height. */
+  background-color: white;
+  /* Line color */
+  transform: rotate(30deg);
+  transform-origin: bottom left;
 }
 body main .wrapper .wrapper__img {
-  margin-right: 10%;
+  margin-left: auto;
 }
 body main .download {
+  position: relative;
+  z-index: 1000;
+  margin: -80px 5% 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   color: #fff;
 }
+body main .download .download__text h1 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+}
+body main .download .download__button {
+  display: flex;
+  margin-left: auto;
+}
 body main .download button {
+  margin-right: 35px;
+  flex-direction: row;
+  width: 172px;
+  height: 55px;
   background: none;
   border: 2px solid #ffffff;
   color: white;
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 10px;
+  cursor: auto;
+}
+body main .download button .button_text {
+  margin: auto;
+}
+body main .download button .button_text h3 {
+  font-size: 22px;
+  margin: 0;
+}
+body main .download button .button_text h5 {
+  font-size: 14px;
+  margin: 0;
+}
+body main .download button:hover {
+  opacity: 0.8;
+}
+body main .cokie {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  background-color: #212834;
+  height: 95px;
+  align-items: center;
+}
+body main .cokie .cokie__text {
+  margin-left: 5%;
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  line-height: 14px;
+  font-weight: normal;
+}
+body main .cokie button {
+  height: 50px;
+  width: 132px;
+  margin-right: 1%;
+  background: #ffffff14;
+  border: 0.5px solid #ffffff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+body main .cokie button:hover {
+  opacity: 1;
+}
+body main .contact {
+  margin-top: 5%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .contact .box {
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  width: 500px;
+  height: 312px;
+  border: 2px solid #fff;
+  vertical-align: middle;
+  margin-left: 5%;
+}
+body main .contact .box .box__text {
+  font-size: 30px;
+}
+body main .contact .box .box__text .box__link {
+  margin-top: 5%;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+}
+body main .mission {
+  display: flex;
+  color: #fff;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body main .mission .mission__img {
+  transform: translateX(-100%);
+  width: 600px;
+}
+body main .mission .mission__text {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 200px;
+}
+body main .mission .mission__text h1 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 51px;
+}
+body main .mission .mission__text p {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+}
+body main .back {
+  display: flex;
+  margin-top: 5%;
+}
+body main .back img {
+  z-index: 0;
+  position: relative;
+  width: 100%;
+  background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
+  background-size: auto;
+}
+body main .back .gradient {
+  position: absolute;
+  width: 100%;
+  height: 72vw;
+  left: 0px;
+  background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
+}
+body main .verification {
+  color: #fff;
+  /*background-image: url(/img/bar.png);
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+body main .verification .verification__img {
+  position: relative;
+  margin-top: auto;
+}
+body main .verification .verification__img img {
+  margin-left: 50px;
+  margin-top: -1000px;
+}
+body main .verification .verification__text {
+  margin-bottom: 10%;
+  margin-top: auto;
+  position: relative;
+  width: 400px;
+}
+body main .verification .verification__text h1 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 51px;
+  margin-top: 0;
+}
+body main .verification .verification__text p {
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
 }
