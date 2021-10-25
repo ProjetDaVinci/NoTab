@@ -16,23 +16,35 @@ body{
         color: #fff;
         max-width: 400px;
         margin-left: 4%;
+        z-index: 1000;
         .header__logo{
             display: flex;
             text-align: center;
         }
         .header-login{
+            
             display: flex;
             flex-direction: row;
             margin-left: 50%;
-           h2{
+           a{
+               
             margin-left: 10%;
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 18px;
-            font-weight: normal;
            }
         }
     }
-
+a{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    border-bottom: 1px solid rgb(255, 255, 255); /* Добавляем подчеркивание сплошной линией черного цвета */
+padding-bottom: 1px;
+   }
+   a:hover { 
+    border-bottom: 1px solid rgba(0,0,0,0); /* Делаем подчеркивание прозрачным */
+}
 
     main{
         /*max-width: 1400px;*/
@@ -261,8 +273,7 @@ font-size: 18px;
                 z-index: 0;
                 position: relative;
                 width: 100%;
-                background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
-                background-size: auto;
+                
             }
             .gradient{
                 position: absolute;
@@ -288,7 +299,7 @@ font-size: 18px;
                 
                 display: flex;
                 align-items: center;
-    justify-content: space-around;
+            justify-content: space-around;
 
     
                 .verification__img{
@@ -323,6 +334,121 @@ font-size: 18px;
                         }
                     }
             
+        }
+        .ellipse{
+            position: absolute;
+        }
+
+        .integration{
+            margin-top: 10%;
+            
+            
+       
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            .integration__text{
+               
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 500px;
+                h1{
+                    font-family: 'Montserrat', sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 51px;
+                }
+                p{
+                    font-family: 'Noto Sans', sans-serif;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                }
+            }
+                 /* <div class="ladder"> <img src="/img/Test_Landing/Group 559.png" alt="" style="float: right;">
+                <img src="/img/Test_Landing/Group 562.png" alt="" style="float: right; top: 170px; right: -50px;">
+                <img src="/img/Test_Landing/Group 561.png" alt="" style="float: right; top: 170px; right: -50px;"> </div>
+            <div class="ladder">  <img src="/img/Test_Landing/Group.png" alt=""></div>*/
+            .integration__img{
+                margin-left: 0;
+                display: flex;
+                flex-direction: column;
+                .ladder{ 
+                    
+                    height: 100%;
+                    margin-bottom: 5%;
+                    
+                    img{
+                    position: relative;
+                }
+
+                }
+               
+               
+            }
+        }
+
+        .qrcode{
+            margin-top: 15%;
+            display: flex;
+            color: #fff;
+
+            .qrcode__text{
+                width: 315px;
+                h1{
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 51px;
+                    font-family: 'Montserrat', sans-serif;
+                }
+                p{
+                    font-family: 'Noto Sans', sans-serif;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                }
+
+                .qrcode__btn{
+                    width: 415px;
+                    button{
+                        margin-right: 35px;
+         
+                         flex-direction: row;
+         
+                         width: 172px;
+                         height: 55px;
+         
+                         background: none;
+                         border: 2px solid #ffffff;
+                         color: white;
+                         text-decoration: none;
+                         border-radius: 10px;
+                         cursor:auto;
+                         
+                         .button_text{
+                             margin: auto;
+                             h3{
+                                 font-size: 22px;
+                                 margin: 0;
+                             }
+                             h5{
+                                 font-size: 14px;
+                                 margin: 0;
+                             }
+                         }
+                         
+                     }
+                     button:hover{
+                         opacity: 0.8;
+                     }
+    
+
+                }
+
+               
+            }
         }
     }
 
