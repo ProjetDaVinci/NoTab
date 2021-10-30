@@ -20,6 +20,14 @@ body{
         .header__logo{
             display: flex;
             text-align: center;
+            h1{
+                display: flex;
+                 align-items: center;
+                 font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 2em;
+            }
         }
         .header-login{
             
@@ -38,7 +46,8 @@ a{
     cursor: pointer;
     font-family: 'Noto Sans', sans-serif;
     font-size: 18px;
-    font-weight: normal;
+    font-weight: bold;
+    
     border-bottom: 1px solid rgb(255, 255, 255); /* Добавляем подчеркивание сплошной линией черного цвета */
 padding-bottom: 1px;
    }
@@ -58,9 +67,7 @@ padding-bottom: 1px;
             justify-content: space-between;
             
             .wrapper__text{
-                background-image: url(/img/Ellipse.png);
-                        background-repeat: no-repeat;
-                        background-position: center left;
+               
                 position: relative;
                 margin-top: 10%;
                 margin-left: 5%;
@@ -125,9 +132,9 @@ padding-bottom: 1px;
             .download__button{
                 display: flex;
                 margin-left: auto;
-            }
-            color: #fff;
-            button{
+            
+                color: #fff;
+                button{
                margin-right: 35px;
 
                 flex-direction: row;
@@ -154,9 +161,10 @@ padding-bottom: 1px;
                     }
                 }
                 
-            }
-            button:hover{
+                }
+                button:hover{
                 opacity: 0.8;
+                }
             }
         }
 
@@ -266,6 +274,7 @@ font-size: 18px;
             }
         }
         .back{
+            overflow: hidden;
             display: flex;
             margin-top: 5%;
             
@@ -276,6 +285,7 @@ font-size: 18px;
                 
             }
             .gradient{
+                
                 position: absolute;
                 width: 100%;
                 height: 72vw;
@@ -283,8 +293,19 @@ font-size: 18px;
 
                 background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
 
+                .phone{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    img{
+                        width: auto;
+                    }
+                }
             }
 
+            
 
 
         }
@@ -340,16 +361,13 @@ font-size: 18px;
         }
 
         .integration{
-            margin-top: 10%;
-            
-            
-       
+            margin-top: 5%;
             display: flex;
-            justify-content: center;
+            
             color: #fff;
             .integration__text{
-               
-
+               margin-left: auto;
+                margin-left: auto;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -372,7 +390,11 @@ font-size: 18px;
                 <img src="/img/Test_Landing/Group 561.png" alt="" style="float: right; top: 170px; right: -50px;"> </div>
             <div class="ladder">  <img src="/img/Test_Landing/Group.png" alt=""></div>*/
             .integration__img{
-                margin-left: 0;
+                margin-top: 150px;
+                margin-left: -50px;
+                min-width: 50%;
+                margin-right: auto;
+                
                 display: flex;
                 flex-direction: column;
                 .ladder{ 
@@ -391,13 +413,20 @@ font-size: 18px;
         }
 
         .qrcode{
-            margin-top: 15%;
+            position: relative;
+            z-index: 2000;
+            
             display: flex;
             color: #fff;
 
+            align-items: flex-end;
+            
+            top: -400px;
             .qrcode__text{
+               margin: 0 auto;
                 width: 315px;
                 h1{
+                    margin-top: 0;
                     font-style: normal;
                     font-weight: bold;
                     font-size: 51px;
@@ -411,29 +440,41 @@ font-size: 18px;
                 }
 
                 .qrcode__btn{
-                    width: 415px;
+                    margin-top: 50px;
+                    display: flex;
+                    width: 500px;
                     button{
+                        display: flex;
                         margin-right: 35px;
          
                          flex-direction: row;
          
-                         width: 172px;
+                         width: 212px;
                          height: 55px;
          
                          background: none;
-                         border: 2px solid #ffffff;
+                         border: 1px solid #ffffff;
                          color: white;
                          text-decoration: none;
                          border-radius: 10px;
                          cursor:auto;
-                         
-                         .button_text{
+                         img{
                              margin: auto;
+                         }
+
+                         .button_text{
+                            margin: auto;
+                             display: flex;
+                             flex-direction: column;
+                             
+                             align-items: flex-start;
                              h3{
+                                
                                  font-size: 22px;
                                  margin: 0;
+                                 font-weight: normal;
                              }
-                             h5{
+                             p{
                                  font-size: 14px;
                                  margin: 0;
                              }
@@ -444,11 +485,321 @@ font-size: 18px;
                          opacity: 0.8;
                      }
     
+                    
+                     }
 
                 }
+                .qrcode__img{
+                    z-index: 2500;
+                    
+                    display: flex;
+                    justify-content: right;
+                    width: 50%;
+                   margin-right: 5%;
+                    img{
+                        position: relative;
+                        margin-left: 50px;
+                       
+
+                    }
 
                
             }
+        }
+        .genNotab{
+            color: #fff;
+           margin-top: 5%;
+            position: relative;
+            .genNotab__img{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .arrow{
+                    position: absolute;
+                    margin-left: 50%;
+                }
+            }
+            .genNotab__text{
+                display: flex;
+                justify-content: space-between;
+                margin: 0 7%;
+                align-items: center;
+                h1{
+                    font-family: 'Montserrat', sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 51px;
+                }
+                p{
+                    font-family: 'Noto Sans', sans-serif;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                }
+                }
+        }
+
+        .ordering{
+            color: #fff;
+            position: relative;
+            margin-top: 10%;
+            .ordering__text{
+                display: flex;
+                flex-direction: column;
+                margin-left: 60%;
+                
+                h1{
+                    font-family: 'Montserrat', sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 51px;
+                    margin: 0 ;
+                }
+                p{
+                    font-family: 'Noto Sans', sans-serif;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                }
+                
+
+            }
+            .ordering__img{
+                z-index: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+                position:absolute;
+            }
+            .ordering__box{
+                width: 60%;
+                margin: 0 auto;
+                margin-top: 150px;
+                position: relative;
+               z-index: 100;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .box{
+                    font-family: 'Noto Sans', sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+             background-color: black;
+    
+                    border-radius: 18px;
+                    
+                    min-height: 50px;
+                    border:1px solid #fff;
+                    vertical-align: middle;
+                    margin-top: 50px;
+                    p{
+                        font-family: 'Roboto', sans-serif;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 23px;
+                        margin: 20px;
+                    }
+                }
+                
+
+            }
+        }
+
+        .userForm{
+            position: relative;
+            z-index: 1000;
+            margin: 10% auto;
+            margin-top: -15%;
+            color: #fff;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            
+            .userForm__text{
+                h1{
+                    font-family: 'Montserrat', sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 51px;
+
+                }
+                
+                p{
+                    font-family: 'Noto Sans', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                }
+            }
+
+            form{
+                ::-webkit-input-placeholder { /* WebKit browsers */
+                color: #BFBFBF;
+                
+            }
+                
+                input{
+                    border-radius: 10px;
+                    height: 70px;
+                    background: #FFFFFF;
+                    border: 1px solid #5C5C5C;
+                    width: 100%;
+                    margin-top: 20px;
+                    text-indent: 20px;
+                }
+                textarea{
+                    
+                    margin-top: 20px;
+                    width: 100%;
+                    padding-top: 10px;
+                    text-indent: 20px;
+                    margin-bottom: 10px;
+                    border: 1px solid #5C5C5C;
+                    background: #ffffff;
+                    line-height: 40px;
+                    border-width: 0;
+                    border-radius: 10px;
+                    font-family: 'Roboto', sans-serif;
+                }
+            
+                .two{
+                    display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                    input{
+                        width: 48%;
+                    }
+
+                }
+                
+                button{
+                    cursor: pointer;
+                    margin: 6% 0;
+                      width: 40%;
+                    color: #fff;
+                    border: 1px solid #FFFFFF;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    background: none;
+                    p{
+                        font-family: 'Montserrat', sans-serif;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 24px;
+                    }
+                }
+            }
+            .userForm_download{
+                .download__text{
+                    font-family: 'Noto Sans', sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 24px;
+                }
+                margin: 0 auto;
+                .download__button{
+                    justify-content: space-around;
+                    display: flex;
+                    width: 500px;
+                    button{
+                        display: flex;
+  
+                         flex-direction: row;
+         
+                         width: 220px;
+                         height: 60px;
+         
+                         background: none;
+                         border: 1px solid #ffffff;
+                         color: white;
+                         text-decoration: none;
+                         border-radius: 10px;
+                         cursor:auto;
+                         img{
+                             width: auto;
+                             margin: auto;
+                         }
+
+                         .button_text{
+                            margin: auto;
+                             display: flex;
+                             flex-direction: column;
+                             
+                             align-items: flex-start;
+                             h3{
+                                
+                                 font-size: 2em;
+                                 margin: 0;
+                                 font-weight: normal;
+                             }
+                             p{
+                                 font-size: 12px;
+                                 margin: 0;
+                             }
+                         }
+                         
+                     }
+                     button:hover{
+                         opacity: 0.8;
+                     }
+    
+                    
+                     
+
+                }
+            }
+            
+        }
+    }
+
+    .footerr{
+        
+        
+        margin: 0 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        color: #fff;
+        font-family: 'Noto Sans', sans-serif;
+        z-index: 1000;
+        a{
+            font-style: bold;
+            border-bottom: none;
+        }
+        h1{
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: bold;  
+            font-size: 22px;
+
+        }
+        p{
+            
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+            
+        }
+        h3{
+            
+            font-style: bold;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        h2{
+           
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+
         }
     }
 
