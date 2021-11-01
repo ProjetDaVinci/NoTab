@@ -12,7 +12,7 @@ body header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
+  color: white;
   max-width: 400px;
   margin-left: 4%;
   z-index: 1000;
@@ -98,6 +98,7 @@ body main .wrapper .wrapper__img {
   margin-left: auto;
 }
 body main .download {
+  color: #fff;
   position: relative;
   z-index: 1000;
   margin: -80px 5% 0;
@@ -113,31 +114,39 @@ body main .download .download__text h1 {
   font-size: 35px;
 }
 body main .download .download__button {
+  justify-content: space-around;
   display: flex;
-  margin-left: auto;
-  color: #fff;
+  width: 500px;
 }
 body main .download .download__button button {
-  margin-right: 35px;
+  display: flex;
   flex-direction: row;
-  width: 172px;
-  height: 55px;
+  width: 220px;
+  height: 60px;
   background: none;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   color: white;
   text-decoration: none;
   border-radius: 10px;
   cursor: auto;
 }
-body main .download .download__button button .button_text {
+body main .download .download__button button img {
+  width: auto;
   margin: auto;
 }
-body main .download .download__button button .button_text h3 {
-  font-size: 22px;
-  margin: 0;
+body main .download .download__button button .button_text {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-body main .download .download__button button .button_text h5 {
-  font-size: 14px;
+body main .download .download__button button .button_text h3 {
+  font-size: 2em;
+  margin: 0;
+  font-weight: normal;
+}
+body main .download .download__button button .button_text p {
+  font-size: 12px;
   margin: 0;
 }
 body main .download .download__button button:hover {
@@ -432,6 +441,10 @@ body main .genNotab .genNotab__img .arrow {
   position: absolute;
   margin-left: 50%;
 }
+body main .genNotab .genNotab__img .arrow img {
+  position: relative;
+  right: 80px;
+}
 body main .genNotab .genNotab__text {
   display: flex;
   justify-content: space-between;
@@ -539,11 +552,14 @@ body main .userForm form ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #BFBFBF;
 }
+body main .userForm form .formError {
+  border: 2px solid red;
+}
 body main .userForm form input {
   border-radius: 10px;
   height: 70px;
   background: #FFFFFF;
-  border: 1px solid #5C5C5C;
+  border: 2px solid #5C5C5C;
   width: 100%;
   margin-top: 20px;
   text-indent: 20px;
@@ -585,6 +601,12 @@ body main .userForm form button p {
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
+}
+body main .userForm form button:hover {
+  background-color: #1f1f1f;
+}
+body main .userForm form button:active {
+  background: #30003b;
 }
 body main .userForm .userForm_download {
   margin: 0 auto;
@@ -668,4 +690,452 @@ body .footerr h2 {
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
+}
+
+@media screen and (max-device-width: 600px) {
+  body {
+    color: #000;
+    background-color: black;
+  }
+  body header {
+    align-items: center;
+    width: 100% !important;
+    margin: 0;
+  }
+  body header .header__logo {
+    margin-left: 3%;
+  }
+  body header .header-login {
+    margin-right: 5%;
+  }
+  body header .header-login a {
+    margin-left: 10%;
+  }
+  body header {
+    max-width: 1000px;
+  }
+  body main .wrapper {
+    align-items: center;
+  }
+  body main .wrapper .wrapper__text {
+    margin-top: -10%;
+  }
+  body main .wrapper .wrapper__text h1 {
+    font-size: 64px;
+    font-family: "Montserrat", sans-serif;
+  }
+  body main .wrapper .wrapper__text .wrapper__text__bottom {
+    display: flex;
+  }
+  body main .wrapper .wrapper__text .wrapper__text__bottom h3 {
+    font-family: "Noto Sans", sans-serif;
+    line-height: 27px;
+    font-weight: normal;
+    font-size: 20px;
+    margin: auto 0px 0;
+    /* сверху | горизонтально | снизу */
+  }
+  body main .wrapper .wrapper__text .wrapper__text__bottom .Vl {
+    display: none;
+  }
+  body main .wrapper .wrapper__img {
+    width: 100%;
+  }
+  body main .download {
+    margin: -80px 0 0;
+    flex-direction: column;
+  }
+  body main .download .download__text h1 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+  }
+  body main .download .download__button {
+    justify-content: space-around;
+    display: flex;
+    width: 500px;
+  }
+  body main .contact {
+    margin-top: 0;
+    flex-direction: column;
+  }
+  body main .contact .box {
+    margin-top: 5%;
+    width: 400px;
+    height: auto;
+    margin-left: 0;
+  }
+  body main .contact .box .box__text {
+    margin: 10%;
+  }
+  body main .mission {
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+  body main .mission .mission__img {
+    margin: 0 auto;
+    transform: rotate(-90deg);
+    width: 600px;
+  }
+  body main .mission .mission__img img {
+    position: relative;
+    left: -225px;
+    width: auto !important;
+  }
+  body main .mission .mission__text {
+    width: 90%;
+    margin: 5% 0;
+    margin-left: 5%;
+  }
+  body main .mission .mission__text h1 {
+    font-size: 24px;
+  }
+  body main .mission .mission__text p {
+    font-size: 16px;
+  }
+  body main .verification {
+    color: #fff;
+    /*background-image: url(/img/bar.png);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+  }
+  body main .verification .verification__img {
+    position: relative;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  body main .verification .verification__img img {
+    margin-left: 0px;
+    margin-top: 10%;
+  }
+  body main .verification .verification__text {
+    margin: 0 5%;
+    margin-bottom: 0%;
+    margin-top: auto;
+    position: relative;
+    width: auto;
+  }
+  body main .verification .verification__text h1 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+  body main .verification .verification__text p {
+    font-size: 16px;
+  }
+  body main .integration {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+  body main .integration .integration__text {
+    margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+  }
+  body main .integration .integration__text h1 {
+    font-size: 24px;
+  }
+  body main .integration .integration__text p {
+    font-size: 16px;
+  }
+  body main .integration .integration__img {
+    margin-top: 0px;
+    margin-left: -100px;
+    min-width: 50%;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  body main .back {
+    overflow: hidden;
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+  }
+  body main .back img {
+    z-index: 0;
+    position: relative;
+    width: 100%;
+  }
+  body main .back .gradient {
+    position: absolute;
+    width: 100%;
+    height: 72vw;
+    left: 0px;
+    background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
+  }
+  body main .back .gradient .phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  body main .back .gradient .phone img {
+    width: auto;
+  }
+  body main .qrcode {
+    position: relative;
+    z-index: 2000;
+    flex-direction: column;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    top: -1265px;
+    margin-bottom: -900px;
+  }
+  body main .qrcode .qrcode__text {
+    margin: 0 5%;
+    margin-bottom: 10%;
+    width: auto;
+  }
+  body main .qrcode .qrcode__text h1 {
+    font-size: 24px;
+  }
+  body main .qrcode .qrcode__text p {
+    font-size: 16px;
+  }
+  body main .qrcode .qrcode__text .qrcode__btn {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    width: auto;
+  }
+  body main .qrcode .qrcode__text .qrcode__btn button {
+    margin-bottom: 20px;
+  }
+  body main .qrcode .qrcode__img {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 0%;
+  }
+  body main .qrcode .qrcode__img img {
+    margin-top: 10%;
+    top: 0 !important;
+    position: relative;
+    margin-left: 0px;
+  }
+  body main .genNotab {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: -30%;
+  }
+  body main .genNotab .genNotab__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  body main .genNotab .genNotab__img .arrow {
+    position: relative;
+    margin-left: 40%;
+  }
+  body main .genNotab .genNotab__img .arrow img {
+    position: relative;
+    right: 0px;
+    transform: rotate(50deg);
+  }
+  body main .genNotab .genNotab__text {
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5% 5%;
+    align-items: flex-start;
+  }
+  body main .genNotab .genNotab__text h1 {
+    font-size: 24px;
+  }
+  body main .genNotab .genNotab__text p {
+    font-size: 16px;
+  }
+  body main .ordering {
+    color: #fff;
+    position: relative;
+    margin-top: 10%;
+  }
+  body main .ordering .ordering__text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-left: 5%;
+    margin-bottom: 20%;
+  }
+  body main .ordering .ordering__text h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  body main .ordering .ordering__text p {
+    font-size: 16px;
+  }
+  body main .ordering .ordering__img {
+    width: auto;
+  }
+  body main .ordering .ordering__box {
+    margin-top: -150px;
+  }
+  body main .ordering .ordering__box .box1 {
+    margin-left: 0 !important;
+    margin-right: 300px !important;
+  }
+  body main .ordering .ordering__box .box2 {
+    margin-right: 0 !important;
+    margin-left: 180px !important;
+  }
+  body main .ordering .ordering__box .box3 {
+    margin-top: 860px !important;
+    margin-left: auto !important;
+  }
+  body main .ordering .ordering__box .box4 {
+    margin-top: -250px !important;
+    margin-right: auto;
+  }
+  body main .back3 {
+    display: none;
+  }
+  body main .ellipse3 {
+    margin-top: 0px !important;
+  }
+  body main .userForm {
+    position: relative;
+    z-index: 1000;
+    margin: 10% auto;
+    margin-top: 30%;
+    color: #fff;
+    width: 90%;
+  }
+  body main .userForm .userForm__text h1 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  body main .userForm .userForm__text p {
+    font-family: "Noto Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  body main .userForm form ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #BFBFBF;
+  }
+  body main .userForm form .formError {
+    border: 2px solid red;
+  }
+  body main .userForm form input {
+    border-radius: 10px;
+    height: 57px;
+    background: #FFFFFF;
+    border: 2px solid #5C5C5C;
+    width: 100%;
+    margin-top: 20px;
+    text-indent: 20px;
+  }
+  body main .userForm form textarea {
+    height: 150px !important;
+  }
+  body main .userForm form .two {
+    display: flex;
+    flex-direction: column;
+  }
+  body main .userForm form .two input {
+    width: 100%;
+  }
+  body main .userForm form button {
+    cursor: pointer;
+    margin: 6% 0;
+    width: 40%;
+    color: #fff;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: none;
+  }
+  body main .userForm form button p {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  body main .userForm form button:hover {
+    background-color: #1f1f1f;
+  }
+  body main .userForm form button:active {
+    background: #30003b;
+  }
+  body main .userForm .userForm_download {
+    margin: 0 auto;
+  }
+  body main .userForm .userForm_download .download__text {
+    font-family: "Noto Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  body main .userForm .userForm_download .download__button {
+    justify-content: space-around;
+    display: flex;
+    width: 500px;
+  }
+  body main .userForm .userForm_download .download__button button {
+    display: flex;
+    flex-direction: row;
+    width: 220px;
+    height: 60px;
+    background: none;
+    border: 1px solid #ffffff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: auto;
+  }
+  body main .userForm .userForm_download .download__button button img {
+    width: auto;
+    margin: auto;
+  }
+  body main .userForm .userForm_download .download__button button .button_text {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  body main .userForm .userForm_download .download__button button .button_text h3 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: normal;
+  }
+  body main .userForm .userForm_download .download__button button .button_text p {
+    font-size: 12px;
+    margin: 0;
+  }
+  body main .userForm .userForm_download .download__button button:hover {
+    opacity: 0.8;
+  }
+  body main .gradient8 {
+    height: 100vw !important;
+  }
+  body main .back .img_marcela {
+    margin-bottom: 300px !important;
+  }
+  body main .Nightlife {
+    float: left !important;
+    margin-right: 0;
+    margin-left: 5%;
+    margin-top: 1502px;
+  }
+  body main .cokie {
+    display: none;
+  }
 }
