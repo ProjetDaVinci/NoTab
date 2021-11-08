@@ -1,24 +1,61 @@
 <!DOCTYPE html>
-<html>
-    <head>
-       
-        <link rel="stylesheet" type="text/css" href="css/slide.css">
-        
-    </head>
-    <body>
-        <div id="slider" class="slider">
-            <div class="wrapper">
-              <div id="slides" class="slides">
-                <span class="slide" >Slide 1</span>
-                <span class="slide" >Slide 2</span>
-                <span class="slide" >Slide 3</span>
-                <span class="slide" >Slide 4</span>
-                <span class="slide" >Slide 5</span>
-              </div>
-            </div>
-            <a id="prev" class="control prev"></a>
-            <a id="next" class="control next"></a>
-          </div>
-          <script src="/js/slider.js"></script>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <link rel="stylesheet" href="css/slide.css" />
+    <title>Infinite Slideshow : non-degree programmer</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="slides">
+        <div class="slide">
+          <img
+            src="https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkbOdbXoq7-9Wyd4PdXof0UqaKTM5SRkZCeTgDn6uOyic"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://fsd.multiurok.ru/viewImage.php?image=http://mediasubs.ru/group//uploads/mi/mir-iskusstva-tvorchestva-i-krasotyi/image/1510679083-784835-131714.jpg"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://traveltimes.ru/wp-content/uploads/2021/06/D6NcGrEX4AE-oR.jpg-large.jpg"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://avatars.mds.yandex.net/get-zen_doc/4055701/pub_60bf78eabc58736775832dab_60c1b9328ca63b4f8d8607b3/scale_1200"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="slide-controls">
+        <div class="slide-btns">
+          <button id="prev-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="slider-dots">
+      <i id="dot-1" class="far fa-dot-circle active" name="dot-selector"></i>
+      <i id="dot-2" class="far fa-dot-circle" name="dot-selector"></i>
+      <i id="dot-3" class="far fa-dot-circle" name="dot-selector"></i>
+      <i id="dot-4" class="far fa-dot-circle" name="dot-selector"></i>
+    </div>
+    <script src="js/slider.js"></script>
+  </body>
 </html>

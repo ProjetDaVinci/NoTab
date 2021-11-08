@@ -1,118 +1,119 @@
-var slider = document.getElementById('slider'),
-    sliderItems = document.getElementById('slides'),
-    prev = document.getElementById('prev'),
-    next = document.getElementById('next');
+const slideContainer = document.querySelector(".container");
+const slide = document.querySelector(".slides");
+const nextBtn = document.getElementById("next-btn");
+const prevBtn = document.getElementById("prev-btn");
+const interval = 3000;
 
-function slide(wrapper, items, prev, next) {
-  var posX1 = 0,
-      posX2 = 0,
-      posInitial,
-      posFinal,
-      threshold = 100,
-      slides = document.getElementsByClassName("slide"),
-      slidesLength = slides.length,
-     slideSize = document.getElementsByClassName('slide')[0].offsetWidth,
-      firstSlide = slides[0],
-      lastSlide = slides[slidesLength - 1],
-      cloneFirst = firstSlide.cloneNode(true),
-      cloneLast = lastSlide.cloneNode(true),
-      index = 0,
-      allowShift = true;
-      console.log(slidesLength);
-  
+let slides = document.querySelectorAll(".slide");
+let index = 1;
+let clicks = 1;
+let slideId;
+let currentDot;
 
-  items.appendChild(cloneFirst);
-  items.insertBefore(cloneLast, firstSlide);
-  wrapper.classList.add('loaded');
-  
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
 
-  items.onmousedown = dragStart;
-  
+firstClone.id = "first-clone";
+lastClone.id = "last-clone";
 
-  items.addEventListener('touchstart', dragStart);
-  items.addEventListener('touchend', dragEnd);
-  items.addEventListener('touchmove', dragAction);
-  
+slide.append(firstClone);
+slide.prepend(lastClone);
 
-  prev.addEventListener('click', function () { shiftSlide(-1) });
-  next.addEventListener('click', function () { shiftSlide(1) });
+const slideWidth = slides[index].clientWidth;
 
-  items.addEventListener('transitionend', checkIndex);
-  
-  function dragStart (e) {
-    e = e || window.event;
-    e.preventDefault();
-    posInitial = items.offsetLeft;
-    
-    if (e.type == 'touchstart') {
-      posX1 = e.touches[0].clientX;
-    } else {
-      posX1 = e.clientX;
-      document.onmouseup = dragEnd;
-      document.onmousemove = dragAction;
-    }
+slide.style.transform = `translateX(${-slideWidth * index}px)`;
+
+const startSlide = () => {
+  slideId = setInterval(() => {
+    moveToNextSlide();
+    setActiveDot();
+  }, interval);
+};
+const turnOffBtns = () => {
+  prevBtn.style.pointerEvents = "none";
+  nextBtn.style.pointerEvents = "none";
+};
+
+const turnOnBtns = () => {
+  prevBtn.style.pointerEvents = "auto";
+  nextBtn.style.pointerEvents = "auto";
+};
+
+const getSlides = () => document.querySelectorAll(".slide");
+
+const flipSlide = () => {
+  slide.style.transition = "0.7s ease-out";
+  slide.style.transform = `translateX(${-slideWidth * index}px)`;
+  turnOffBtns();
+};
+
+const setActiveDot = () => {
+  if (index !== slides.length - 1) {
+    currentDot = document.getElementById(`dot-${index}`);
+    currentDot.classList.add("active");
+  } else {
+    currentDot = document.getElementById(`dot-1`);
+    currentDot.classList.add("active");
+  }
+};
+const disableDot = () => {
+  if (index === 2) {
+    currentDot = document.getElementById(`dot-1`);
+    currentDot.classList.remove("active");
+  }
+  if (index === slides.length - 1) {
+    currentDot = document.getElementById(`dot-${slides.length - 2}`);
+    currentDot.classList.remove("active");
+  } else {
+    currentDot = document.getElementById(`dot-${index - 1}`);
+    currentDot.classList.remove("active");
+  }
+};
+
+slide.addEventListener("transitionend", () => {
+  disableDot();
+  turnOnBtns();
+  slides = getSlides();
+  if (slides[index].id === firstClone.id) {
+    slide.style.transition = "none";
+    index = 1;
+    slide.style.transform = `translateX(${-slideWidth * index}px)`;
   }
 
-  function dragAction (e) {
-    e = e || window.event;
-    
-    if (e.type == 'touchmove') {
-      posX2 = posX1 - e.touches[0].clientX;
-      posX1 = e.touches[0].clientX;
-    } else {
-      posX2 = posX1 - e.clientX;
-      posX1 = e.clientX;
-    }
-    items.style.left = (items.offsetLeft - posX2) + "px";
+  if (slides[index].id === lastClone.id) {
+    slide.style.transition = "none";
+    index = slides.length - 2;
+    slide.style.transform = `translateX(${-slideWidth * index}px)`;
   }
-  
-  function dragEnd (e) {
-    posFinal = items.offsetLeft;
-    if (posFinal - posInitial < -threshold) {
-      shiftSlide(1, 'drag');
-    } else if (posFinal - posInitial > threshold) {
-      shiftSlide(-1, 'drag');
-    } else {
-      items.style.left = (posInitial) + "px";
-    }
+});
 
-    document.onmouseup = null;
-    document.onmousemove = null;
+const moveToNextSlide = () => {
+  slides = getSlides();
+  if (index >= slides.length - 1) return;
+  index++;
+  setActiveDot();
+  disableDot();
+  flipSlide();
+};
+
+const moveToPreviousSlide = () => {
+  if (index <= 0) return;
+  index--;
+  flipSlide();
+};
+
+const checkOutsideClick = ({ target }) => {
+  if (target.id.includes("dot")) {
+    index = [...document.getElementsByName("dot-selector")].findIndex(
+      (e) => e === target
+    );
+    flipSlide();
   }
-  
-  function shiftSlide(dir, action) {
-    items.classList.add('shifting');
-    
-    if (allowShift) {
-      if (!action) { posInitial = items.offsetLeft; }
+};
 
-      if (dir == 1) {
-        items.style.left = (posInitial - slideSize) + "px";
-        index++;      
-      } else if (dir == -1) {
-        items.style.left = (posInitial + slideSize) + "px";
-        index--;      
-      }
-    };
-    
-    allowShift = false;
-  }
-    
-  function checkIndex (){
-    items.classList.remove('shifting');
+document.body.addEventListener("click", checkOutsideClick);
 
-    if (index == -1) {
-      items.style.left = -(slidesLength * slideSize) + "px";
-      index = slidesLength - 1;
-    }
+startSlide();
 
-    if (index == slidesLength) {
-      items.style.left = -(1 * slideSize) + "px";
-      index = 0;
-    }
-    
-    allowShift = true;
-  }
-}
-
-slide(slider, sliderItems, prev, next);
+nextBtn.addEventListener("click", moveToNextSlide);
+prevBtn.addEventListener("click", moveToPreviousSlide);
